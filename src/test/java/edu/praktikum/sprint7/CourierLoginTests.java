@@ -56,7 +56,6 @@ public class CourierLoginTests {
         CourierCreds login = new CourierCreds(courier.getLogin(), "");
 
         Response loginResponse = courierClient.login(login);
-        //Response loginResponse = courierClient.login(credsFromCourier(courier));
         courierId = loginResponse.path("id");
 
         assertEquals("Недостаточно данных для входа", 400, loginResponse.statusCode());

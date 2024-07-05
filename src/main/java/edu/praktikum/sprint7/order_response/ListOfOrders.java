@@ -31,4 +31,6 @@ public class ListOfOrders {
     public void setAvailableStations(List<AvailableStations> availableStations) {
         this.availableStations = availableStations;
     }
+
+
 }

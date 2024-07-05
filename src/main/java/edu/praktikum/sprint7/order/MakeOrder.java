@@ -9,13 +9,12 @@ public class MakeOrder {
 
 
     public Response createOrder(OrderModel order) {
-        return (Response) given()
+        return given()
                 .header("Content-type", "application/json")
                 .and()
                 .body(order)
                 .when()
-                .post(CREATE_ORDER_ENDPOINT)
-                .then().log().all();
+                .post(CREATE_ORDER_ENDPOINT);
     }
 
 

@@ -21,7 +21,7 @@ public class CourierClient {
 
     public Response create(Courier courier) {
 
-        return given()
+        return  given()
                 .header("Content-type", "application/json")
                 .and()
                 .body(courier)
@@ -30,12 +30,13 @@ public class CourierClient {
     }
 
     public Response login(CourierCreds creds) {
-        return given()
+        return  given()
                 .header("Content-type", "application/json")
                 .and()
                 .body(creds)
                 .when()
                 .post(LOGIN_ENDPOINT);
+
 
 
 

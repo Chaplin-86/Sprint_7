@@ -38,9 +38,6 @@ public class OrderListTest {
 
         MatcherAssert.assertThat(listOfOrders, notNullValue());
 
-
-
-
     }
 
 }
