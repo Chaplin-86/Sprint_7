@@ -11,5 +11,4 @@ public class ResponseToLogin {
         this.id = id;
     }
 
-
 }

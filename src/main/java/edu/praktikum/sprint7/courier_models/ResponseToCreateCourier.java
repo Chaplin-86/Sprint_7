@@ -10,6 +10,4 @@ public class ResponseToCreateCourier {
     public void setOk(boolean ok) {
         this.ok = ok;
     }
-
-
 }

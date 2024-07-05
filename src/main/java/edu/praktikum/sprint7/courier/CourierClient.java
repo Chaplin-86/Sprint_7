@@ -37,9 +37,6 @@ public class CourierClient {
                 .when()
                 .post(LOGIN_ENDPOINT);
 
-
-
-
     }
 
     public  ValidatableResponse delete(DeleteCourier del, String cId) {

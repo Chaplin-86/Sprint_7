@@ -32,5 +32,4 @@ public class ListOfOrders {
         this.availableStations = availableStations;
     }
 
-
 }
