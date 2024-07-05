@@ -96,7 +96,7 @@ public class CreateCourierTests {
 
     public void createCourierWithoutLogin() {
         Courier courier = new Courier("", "Animagus1959", "Sirius");
-        CourierClient courierClient = new CourierClient();
+        courierClient = new CourierClient();
 
         Response response = courierClient.create(courier);
 
@@ -109,7 +109,7 @@ public class CreateCourierTests {
 
     public void createCourierWithoutPassword() {
         Courier courier = new Courier("Padfoot", "", "Sirius");
-        CourierClient courierClient = new CourierClient();
+        courierClient = new CourierClient();
 
         Response response = courierClient.create(courier);
 
@@ -121,7 +121,7 @@ public class CreateCourierTests {
 
     public void createCourierWithoutFirstName() {
         Courier courier = new Courier("Padfoot_11", "Animagus1959", "");
-        CourierClient courierClient = new CourierClient();
+        courierClient = new CourierClient();
 
         Response response = courierClient.create(courier);
 
