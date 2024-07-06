@@ -31,4 +31,5 @@ public class CourierCreds {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

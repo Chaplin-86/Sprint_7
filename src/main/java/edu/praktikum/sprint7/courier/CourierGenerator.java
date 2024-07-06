@@ -12,6 +12,4 @@ public class CourierGenerator {
                 .withFirstName(randomString(20));
     }
 
-
-
 }

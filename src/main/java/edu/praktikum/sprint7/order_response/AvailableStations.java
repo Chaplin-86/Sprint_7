@@ -29,4 +29,5 @@ public class AvailableStations {
     public void setColor(String color) {
         this.color = color;
     }
+
 }
