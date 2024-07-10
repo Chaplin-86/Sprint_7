@@ -1,6 +1,6 @@
 package edu.praktikum.sprint7.courier;
 
-import edu.praktikum.sprint7.courier_models.Courier;
+import edu.praktikum.sprint7.couriermodels.Courier;
 
 import static edu.praktikum.sprint7.utils.Utils.randomString;
 

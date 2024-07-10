@@ -1,4 +1,4 @@
-package edu.praktikum.sprint7.courier_models;
+package edu.praktikum.sprint7.couriermodels;
 
 public class CourierCreds {
 

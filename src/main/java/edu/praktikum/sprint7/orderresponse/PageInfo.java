@@ -1,4 +1,4 @@
-package edu.praktikum.sprint7.order_response;
+package edu.praktikum.sprint7.orderresponse;
 
 public class PageInfo {
     private int page;

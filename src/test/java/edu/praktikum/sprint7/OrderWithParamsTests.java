@@ -2,6 +2,7 @@ package edu.praktikum.sprint7;
 
 
 import edu.praktikum.sprint7.order.MakeOrder;
+import edu.praktikum.sprint7.order.OrderClient;
 import edu.praktikum.sprint7.order.OrderModel;
 import edu.praktikum.sprint7.order.OrderTrack;
 import io.qameta.allure.Description;
@@ -10,6 +11,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
+import static org.apache.http.HttpStatus.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -19,6 +21,8 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith( Parameterized.class)
 public class OrderWithParamsTests {
+
+    private OrderClient orderClient;
     private static final String BASE_URL = "https://qa-scooter.praktikum-services.ru";
 
     @Parameterized.Parameter( 0 )
@@ -66,20 +70,16 @@ public class OrderWithParamsTests {
         MakeOrder makeOrder = new MakeOrder();
         Response orderResponse = makeOrder.createOrder(order);
 
-        assertEquals(201, orderResponse.statusCode());
+        assertEquals(SC_CREATED, orderResponse.statusCode());
 
     }
 
     @Test
     @DisplayName( "Проверка тела ответа на запрос о создании заказа" )
     public void checkResponseToOrderBody() {
-        OrderModel order = new OrderModel(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment, color);
-        OrderTrack orderTrack = given()
-                .header("Content-type", "application/json")
-                .body(order)
-                .post(CREATE_ORDER_ENDPOINT)
-                .body()
-                .as(OrderTrack.class);
+        orderClient = new OrderClient();
+
+        OrderTrack orderTrack = orderClient.ResponseToOrderBody();
 
         int trackNumber = orderTrack.getTrack();
 
